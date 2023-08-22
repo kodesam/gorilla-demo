@@ -109,4 +109,4 @@ iface = gr.Interface(
 )
 
 # Launch the interface and get the public gradio link
-iface.launch(share=True,debug=True)
+iface.launch()
