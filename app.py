@@ -87,15 +87,15 @@ def parse_and_display(prompt, model):
 
 # Define example prompts
 examples = [
-    ["I would like to translate 'I feel very good today.' from English to Chinese.","gorilla-7b-hf-v1"],
+    ["I would like to translate 'I feel very good today.' from English to French.","gorilla-7b-hf-v1"],
+    ["I want to build a robot that can detecting objects in an image ‘cat.jpeg’. Input: [‘cat.jpeg’]","gorilla-7b-hf-v1"],
     ["I would like to translate from English to Chinese.","gorilla-7b-th-v0"],
-    ["I would like to translate from English to German.","gorilla-mpt-7b-hf-v0"]
 ]
 
 # Create the Gradio interface
 iface = gr.Interface(
     fn=parse_and_display,
-    inputs=["text", gr.components.Dropdown(["gorilla-7b-hf-v1", "gorilla-mpt-7b-hf-v0", "gorilla-7b-th-v0"], label="Model")],
+    inputs=["text", gr.components.Dropdown(["gorilla-7b-hf-v1", "gorilla-7b-th-v0",  "gorilla-7b-tf-v0", "gorilla-mpt-7b-hf-v0"], label="Model")],
     outputs=[
         gr.components.Textbox(label="Domain"),
         gr.components.Textbox(label="API Call"),
